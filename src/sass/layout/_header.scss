@@ -1,0 +1,112 @@
+.header {
+  padding: 30px 20px;
+  background: tint(color('pale-cyan'), 5%)
+    url('../../images/bg-hero-mobile.svg') top center/100% 92% no-repeat;
+
+  @include respond-to('laptop') {
+    padding: 30px 50px;
+    background-image: url('../../images/bg-hero-desktop.svg');
+  }
+}
+
+.logo-container {
+  margin-bottom: 100px;
+
+  #{&}__logo {
+    width: 120px;
+    float: left;
+
+    @include respond-to('laptop') {
+      width: 150px;
+    }
+  }
+
+  #{&}__button {
+    @include button(
+      100px,
+      (3px 6px),
+      (tint(color('pale-cyan'), 90%)),
+      color('dark-cyan'),
+      15px,
+      (0px 3px 10px tint(color('dark-cyan'), 70%)),
+      12px
+    );
+    float: right;
+
+    @include respond-to('laptop') {
+      width: 120px;
+      padding: 5px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}
+
+.intro {
+  clear: both;
+
+  @include respond-to('laptop') {
+    @include cardflex;
+  }
+}
+
+.intro-text {
+  #{&}__heading,
+  #{&}__desc,
+  #{&}__button {
+    margin-bottom: 30px;
+  }
+
+  #{&}__heading {
+    @include respond-to('laptop') {
+      font-size: 40px;
+    }
+  }
+
+  #{&}__desc {
+    font-size: 17px;
+
+    @include respond-to('tablet') {
+      font-size: 22px;
+    }
+
+    @include respond-to('laptop') {
+      font-size: 18px;
+    }
+  }
+
+  #{&}__button {
+    @include button(
+      75%,
+      (15px 35px),
+      color('pink'),
+      color('pale-cyan'),
+      25px,
+      (0px 3px 10px tint(color('dark-cyan'), 85%)),
+      15px
+    );
+
+    @include respond-to('laptop') {
+      width: 55%;
+      padding: 20px 35px;
+      border-radius: 30px;
+    }
+  }
+
+  @include respond-to('laptop') {
+    width: 50%;
+    align-self: center;
+  }
+}
+
+.intro-illu {
+  margin-bottom: 30px;
+
+  @include respond-to('laptop') {
+    img {
+      display: block;
+      margin: auto;
+    }
+  }
+}

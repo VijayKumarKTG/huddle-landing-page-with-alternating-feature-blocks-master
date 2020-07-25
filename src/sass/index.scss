@@ -1,0 +1,20 @@
+@charset 'utf-8';
+
+@import 'utilities/variables';
+@import 'utilities/functions';
+@import 'utilities/mixins';
+
+@import 'base/style';
+
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}

@@ -1,0 +1,47 @@
+/// fonts map, gathering all fonts of the application
+/// @access private
+/// @type Map
+/// @prop {String} key - font's name
+/// @prop {List} value - font's value
+$fonts: (
+  'poppins': (
+    'Poppins',
+    sans-serif,
+  ),
+  'opensans': (
+    'Open Sans',
+    sans-serif,
+  ),
+);
+
+/// colors map, gathering all colors of the application
+/// @access private
+/// @type Map
+/// @prop {String} key - color's name
+/// @prop {color} value - color's value
+$colors: (
+  'pink': hsl(322, 100%, 66%),
+  'grayish-blue': hsl(208, 11%, 55%),
+  'dark-cyan': hsl(192, 100%, 9%),
+  'pale-cyan': hsl(193, 100%, 96%),
+);
+
+/// breakpoints map, gathering all breakpoints of the application
+/// @access private
+/// @type Map
+/// @prop {String} key - breakpoint's name
+/// @prop {List} value - breakpoint's value
+$breakpoints: (
+  'tablet': (
+    min-width: 728px,
+  ),
+  'tablet-land': (
+    min-width: 1024px,
+  ),
+  'laptop': (
+    min-width: 1280px,
+  ),
+  'desktop': (
+    min-width: 1444px,
+  ),
+);

@@ -1,0 +1,35 @@
+/// Get a font value from a font name
+/// @access public
+/// @param {String} $font - font's name
+/// @return {List}
+/// @require $fonts
+@function font($font) {
+  @return map-get($fonts, $font);
+}
+
+/// Get a color value from a color name
+/// @access public
+/// @param {String} $color - color's name
+/// @return {Color}
+/// @require $colors
+@function color($color) {
+  @return map-get($colors, $color);
+}
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color} - return a new color
+@function tint($color, $percentage) {
+  @return mix(hsl(0, 0%, 100%), $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color} - return a new color
+@function shade($color, $percentage) {
+  @return mix(hsl(0, 0%, 0%), $color, $percentage);
+}

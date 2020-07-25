@@ -1,0 +1,60 @@
+/// Responsive breakpoint manager
+/// @access public
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+             + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+/// Button generator
+/// @access public
+/// @param {Number} $width - button's width
+/// @param {List} $padding - button's padding
+/// @param {Color} $bgColor - button's background color
+/// @param {Color} $fColor - button's font color
+/// @param {Number} $bdRadius - button's border radius
+/// @param {List} $boxShadow - button's box shadow
+/// @param {Number} $fontSize - button's font size
+/// @return - a button fully controlled by developer
+@mixin button(
+  $width,
+  $padding,
+  $bgColor,
+  $fColor,
+  $bdRadius,
+  $boxShadow,
+  $fontSize
+) {
+  width: $width;
+  padding: $padding;
+  background-color: $bgColor;
+  color: $fColor;
+  border: none;
+  border-radius: $bdRadius;
+  box-shadow: $boxShadow;
+  font-size: $fontSize;
+  cursor: pointer;
+}
+
+/// Generate a flexbox of content spaced evenly
+/// @access public
+/// @return - a flexbox
+@mixin cardflex {
+  display: flex;
+  justify-content: space-evenly;
+}

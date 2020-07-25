@@ -1,0 +1,105 @@
+main .grid-container {
+  padding: 30px 20px;
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 40px;
+  margin: 30px 0px;
+
+  @include respond-to('laptop') {
+    padding: 130px 60px;
+  }
+}
+
+.card {
+  box-shadow: 0px 0px 15px tint(color('dark-cyan'), 80%);
+  border-radius: 20px;
+
+  #{&}__img {
+    padding: 30px;
+
+    @include respond-to('laptop') {
+      width: 40%;
+    }
+  }
+
+  @include respond-to('laptop') {
+    @include cardflex;
+    &:nth-of-type(odd) {
+      flex-direction: row-reverse;
+
+      .card__desc {
+        padding-left: 50px;
+      }
+    }
+
+    &:nth-of-type(even) {
+      .card__img {
+        padding-left: 50px;
+      }
+    }
+  }
+}
+
+.card__desc {
+  padding: 0px 30px 30px 30px;
+  #{&}__header {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  #{&}__text {
+    font-size: 15px;
+    color: color('grayish-blue');
+
+    @include respond-to('tablet') {
+      font-size: 20px;
+    }
+  }
+  @include respond-to('laptop') {
+    width: 50%;
+    align-self: center;
+  }
+}
+
+.question {
+  width: 95%;
+  padding: 20px;
+  position: relative;
+  margin: auto;
+  background-color: tint(color('pale-cyan'), 50%);
+  top: 70px;
+  box-shadow: 0px -6px 10px -10px tint(color('dark-cyan'), 80%);
+  border-radius: 20px;
+
+  #{&}__head {
+    font-size: 18px;
+    margin-bottom: 25px;
+
+    @include respond-to('laptop') {
+      font-size: 30px;
+    }
+  }
+
+  #{&}__button {
+    @include button(
+      75%,
+      (15px 35px),
+      color('pink'),
+      color('pale-cyan'),
+      25px,
+      (0px 0px 10px tint(color('dark-cyan'), 85%)),
+      15px
+    );
+    margin-bottom: 30px;
+
+    @include respond-to('laptop') {
+      width: 50%;
+      padding: 25px 25px;
+      border-radius: 35px;
+    }
+  }
+
+  @include respond-to('laptop') {
+    width: 50%;
+    text-align: center;
+  }
+}
